@@ -43,9 +43,9 @@ spring:
           auth: true
           starttls:
             enable: true
-    data:
-      redis:
-        url: "${SPRING_REDIS_URL:redis://default:QjJaLtUgFTqzaMwTXjwGuRORiIllWCje@interchange.proxy.rlwy.net:34181}"
+  data:
+    redis:
+      url: "${SPRING_REDIS_URL:redis://default:QjJaLtUgFTqzaMwTXjwGuRORiIllWCje@interchange.proxy.rlwy.net:34181}"
         
 jwt:
   signerKey: "${JWT_SIGNER_KEY}"
