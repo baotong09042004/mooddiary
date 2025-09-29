@@ -1,0 +1,56 @@
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: framework
+app:
+  fontend-url: "${FRONTEND_URL:http://localhost:3000}"
+  ngrok:
+    fontend-url-public: "${FRONTEND_URL_PUBLIC:https://real-unlikely-mastiff.ngrok-free.app}"
+
+spring:
+  datasource:
+    url: "${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/mood_diary}"
+    username: "${SPRING_DATASOURCE_USERNAME:root}"
+    password: "${SPRING_DATASOURCE_PASSWORD:123456}"
+  jpa:
+    hibernate:
+      #ddl-auto: create-drop
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: "${GOOGLE_CLIENT_ID}"
+            client-secret: "${GOOGLE_CLIENT_SECRET}"
+            scope: profile,email
+            redirect-uri: "{baseUrl}/login/oauth2/code/google"
+        provider:
+          google:
+            authorization-uri: "https://accounts.google.com/o/oauth2/v2/auth"
+            token-uri: "https://oauth2.googleapis.com/token"
+            user-info-uri: "https://www.googleapis.com/oauth2/v3/userinfo"
+            user-name-attribute: "sub"
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    data:
+      redis:
+        url: "${SPRING_REDIS_URL:redis://default:QjJaLtUgFTqzaMwTXjwGuRORiIllWCje@interchange.proxy.rlwy.net:34181}"
+        host: "${SPRING_REDIS_HOST:localhost}"
+        port: "${SPRING_REDIS_PORT:6379}"
+        password: "${SPRING_REDIS_PASSWORD:QjJaLtUgFTqzaMwTXjwGuRORiIllWCje}"
+jwt:
+  signerKey: "${JWT_SIGNER_KEY}"
+  valid-duration: 86400
+  refreshable-duration: 3000000
+

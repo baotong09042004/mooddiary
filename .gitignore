@@ -1,0 +1,66 @@
+# ===================================================================
+# 1. QUY TẮC CHUNG (Áp dụng cho toàn bộ dự án)
+# ===================================================================
+
+# File môi trường local - KHÔNG BAO GIỜ commit file chứa secrets
+# Mỗi lập trình viên sẽ có file này riêng trên máy của mình
+.env
+.env.local
+.env.*.local
+
+# Logs
+# Không commit file log vì chúng được tạo ra trong quá trình chạy
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Thư mục chứa các gói cài đặt (luôn có thể cài lại từ package.json/pom.xml)
+node_modules/
+
+# Files của hệ điều hành (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Files của IDE và trình soạn thảo code (VSCode, IntelliJ, Eclipse...)
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+nbproject/
+
+# ===================================================================
+# 2. QUY TẮC RIÊNG CHO FRONTEND (Next.js)
+# ===================================================================
+
+# Thư mục build của Next.js
+apps/frontend/.next/
+apps/frontend/out/
+
+# Thư mục build của Vercel (khi deploy)
+.vercel/
+
+# Báo cáo kết quả test
+apps/frontend/coverage/
+
+# ===================================================================
+# 3. QUY TẮC RIÊNG CHO BACKEND (Spring Boot)
+# ===================================================================
+
+# Thư mục build của Maven / Gradle
+# Chứa file .class, .jar, .war...
+apps/backend/target/
+apps/backend/build/
+
+# Các file cấu hình local mà không muốn commit (nếu có)
+# Ví dụ: file application-dev.properties chứa DB connection của bạn
+# apps/backend/src/main/resources/application-dev.properties
+
+# Files tạo ra bởi các plugin build
+.flattened-pom.xml
