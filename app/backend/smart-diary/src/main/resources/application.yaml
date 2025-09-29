@@ -4,7 +4,7 @@ server:
 app:
   fontend-url: "${FRONTEND_URL:http://localhost:3000}"
   ngrok:
-    fontend-url-public: "${FRONTEND_URL_PUBLIC:https://real-unlikely-mastiff.ngrok-free.app}"
+    fontend-url-public: "${FRONTEND_URL_PUBLIC:https://project1-mood-diary.vercel.app}"
 
 spring:
   datasource:
@@ -46,9 +46,7 @@ spring:
     data:
       redis:
         url: "${SPRING_REDIS_URL:redis://default:QjJaLtUgFTqzaMwTXjwGuRORiIllWCje@interchange.proxy.rlwy.net:34181}"
-        host: "${SPRING_REDIS_HOST:localhost}"
-        port: "${SPRING_REDIS_PORT:6379}"
-        password: "${SPRING_REDIS_PASSWORD:QjJaLtUgFTqzaMwTXjwGuRORiIllWCje}"
+        
 jwt:
   signerKey: "${JWT_SIGNER_KEY}"
   valid-duration: 86400
